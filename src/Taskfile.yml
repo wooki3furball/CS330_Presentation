@@ -1,0 +1,61 @@
+# Author: Michael Bopp
+# Filename: Taskfile.yml
+# Description: Similar to a Makefile w/o GNU dependency & utilizing YAML.
+# Date Created: 8/22/23
+# Last Edited: 8/22/23
+# Single Dependency: https://taskfile.dev/installation/
+
+# Useful Commands:
+# task --list-all
+# task --list-all --json
+# task --list --json
+
+version: '3'
+
+vars:
+  CURRENT_DIR:
+    sh: pwd
+
+tasks:
+  print-dir:
+    cmds:
+      - echo '{{.CURRENT_DIR}}'
+    aliases: ['p']
+  build:
+    cmds:
+      - GOOS=js GOARCH=wasm go build -o main.wasm ./main.go
+    aliases: ['b']
+  server:
+    cmds:
+      - |
+        if [ "{{OS}}" = "windows" ]; then
+          python ./server.py
+        else
+          python3 ./server.py
+        fi
+    aliases: ['s']
+  clean:
+    cmds:
+      - |
+        if [ "{{OS}}" = "windows" ]; then
+          cmd /c del *.out *.exe *.wasm
+        else
+          rm -f *.out *.exe *.wasm
+        fi
+    aliases: ['c']
+  hello:
+    cmds:
+      - go run hello.go
+    aliases: ['h']
+  tree:
+    vars:
+      INT_ARG:
+        sh: |
+          if [ "{{OS}}" = "windows" ]; then
+            powershell -Command "& { Read-Host 'Please enter an integer:' }"
+          else
+            read -p "Please enter an integer: " input; echo $$input
+          fi
+    cmds:
+      - go run btree.go {{.INT_ARG}}
+    aliases: ['t']
