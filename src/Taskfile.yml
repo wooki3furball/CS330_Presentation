@@ -2,8 +2,8 @@
 # Filename: Taskfile.yml
 # Description: Similar to a Makefile w/o GNU dependency & utilizing YAML.
 # Date Created: 8/22/23
-# Last Edited: 8/22/23
-# Single Dependency: https://taskfile.dev/installation/
+# Last Edited: 8/23/23
+# Dependency: https://taskfile.dev/installation/
 
 # Useful Commands:
 # task --list-all
@@ -48,14 +48,6 @@ tasks:
       - go run hello.go
     aliases: ['h']
   tree:
-    vars:
-      INT_ARG:
-        sh: |
-          if [ "{{OS}}" = "windows" ]; then
-            powershell -Command "& { Read-Host 'Please enter an integer:' }"
-          else
-            read -p "Please enter an integer: " input; echo $$input
-          fi
     cmds:
-      - go run btree.go {{.INT_ARG}}
+      - go run btree.go 10
     aliases: ['t']
