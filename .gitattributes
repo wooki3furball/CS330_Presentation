@@ -1,2 +1,1 @@
-* linguist-vendored
-*.go linguist-vendored=false
+wasm_exec.js linguist-vendored=true
