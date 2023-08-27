@@ -2,7 +2,7 @@
 # Filename: Taskfile.yml
 # Description: Similar to a Makefile w/o GNU dependency & utilizing YAML.
 # Date Created: 8/22/23
-# Last Edited: 8/23/23
+# Last Edited: 8/26/23
 # Dependency: https://taskfile.dev/installation/
 
 # Useful Commands:
@@ -23,15 +23,15 @@ tasks:
     aliases: ['p']
   build:
     cmds:
-      - GOOS=js GOARCH=wasm go build -o main.wasm ./main.go
+      - GOOS=js GOARCH=wasm go build -o ./wasm/main.wasm ./wasm/main.go
     aliases: ['b']
   server:
     cmds:
       - |
         if [ "{{OS}}" = "windows" ]; then
-          python ./server.py
+          python ./wasm/server.py
         else
-          python3 ./server.py
+          python3 ./wasm/server.py
         fi
     aliases: ['s']
   clean:

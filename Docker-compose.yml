@@ -25,3 +25,5 @@ services:
     stdin_open: true  # -i flag in `docker run`
     tty: true         # -t flag in `docker run`
     command: sh       # Start an Alpine Linux shell.
+    ports:
+      - "8080:8080"

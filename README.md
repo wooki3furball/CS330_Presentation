@@ -1,6 +1,6 @@
 # CS330_Presentation
 
-Author: Michael Bopp
+Author: Michael Bopp <br>
 Last Edited: 8/26/23
 
 # Downloading Docker
@@ -53,4 +53,10 @@ docker-compose run cs330_service
 By this point you should be in a Docker container, or have Go & Python installed.
 
 ![Taskfile](taskfile_demo.jpg)
+
+# Sources
+
+JS code I based my Go adaptation on: https://dev.to/foqc/mandelbrot-set-in-js-480o
+
+https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke
 
