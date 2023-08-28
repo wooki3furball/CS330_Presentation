@@ -2,7 +2,7 @@
 # Filename: Docker-compose.yml
 # Description: Docker-compose for CS330 Presentation.
 # Date Created: 8/25/23
-# Last Edited: 8/25/23
+# Last Edited: 8/27/23
 
 # Commands to run:
 # docker-compose run cs330_service
@@ -26,4 +26,4 @@ services:
     tty: true         # -t flag in `docker run`
     command: sh       # Start an Alpine Linux shell.
     ports:
-      - "8080:8080"
+      - "8080:80/tcp"

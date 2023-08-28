@@ -1,7 +1,7 @@
 # CS330_Presentation
 
 Author: Michael Bopp <br>
-Last Edited: 8/26/23
+Last Edited: 8/27/23
 
 # Downloading Docker
 
@@ -53,6 +53,22 @@ docker-compose run cs330_service
 By this point you should be in a Docker container, or have Go & Python installed.
 
 ![Taskfile](taskfile_demo.jpg)
+
+
+# Running wasm
+
+```bash
+# Compile Go -> wasm code
+task b
+
+# Start the web test server
+task s
+
+```
+
+If you are in a container manually go to the link below. <br> http://localhost:80
+
+Then you must click the wasm folder.
 
 # Sources
 
