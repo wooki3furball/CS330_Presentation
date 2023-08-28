@@ -2,7 +2,7 @@
 // Filename: btree.go
 // Description: Go program demoing a binary tree, go routines, & channels.
 // Date Created: 8/21/23
-// Last Edited: 8/22/23
+// Last Edited: 8/28/23
 
 package main
 
@@ -50,7 +50,7 @@ func fibonacci(n int) int {
 func runBinaryTree(values []int, treeName string) {
 	startTime := time.Now()
 	var root *Node
-	for _, value := range values {
+	for _, value := range values { // Traversing range of container
 		root = insert(root, value)
 	}
 	insertTime := time.Since(startTime)
@@ -64,7 +64,7 @@ func runBinaryTree(values []int, treeName string) {
 
 	fmt.Printf("\n%s tree (sorted):\n", treeName)
 	traversalStartTime := time.Now()
-	for value := range ch {
+	for value := range ch { // Traversing range of channel type
 		fmt.Println(value)
 	}
 	traversalTime := time.Since(traversalStartTime)

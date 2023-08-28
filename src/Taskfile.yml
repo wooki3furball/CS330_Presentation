@@ -2,7 +2,7 @@
 # Filename: Taskfile.yml
 # Description: Similar to a Makefile w/o GNU dependency & utilizing YAML.
 # Date Created: 8/22/23
-# Last Edited: 8/26/23
+# Last Edited: 8/28/23
 # Dependency: https://taskfile.dev/installation/
 
 # Useful Commands:
@@ -51,3 +51,7 @@ tasks:
     cmds:
       - go run btree.go 10
     aliases: ['t']
+  go:
+    cmds:
+      - go run goroutine.go
+    aliases: ['g']
