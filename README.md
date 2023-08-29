@@ -42,14 +42,16 @@ source ~/.bashrc
 unset BUILD_CONTEXT
 ```
 
-# Docker-compose Script
+# Interacting with Docker through dscript.py
+
+A python interpretter is needed, your command might be python3 instead of python.
 
 ```bash
 # Build a Docker image
-docker-compose build --no-cache
+python dscript.py build
 
 # Build a Docker container & attach to the container in a shell
-docker-compose run cs330_service
+python dscript.py run
 ```
 
 # Taskfile execution
@@ -62,6 +64,8 @@ By this point you should be in a Docker container, or have Go & Python installed
 # Running wasm
 
 ```bash
+task --list-all
+
 # Compile Go -> wasm code
 task b
 
