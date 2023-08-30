@@ -8,8 +8,9 @@
 import os
 import subprocess
 import sys
+import argparse
 
-def docker_build():
+def docker_build(no_cache=False):
     """
     Construct the Docker build command
     """
@@ -17,8 +18,10 @@ def docker_build():
         'docker', 'build',
         '-t', 'alpine:CS330',
         '.'  # Build context (current directory)
-        # Need to add the --no-cache command to the build, also need to make it possible to pass into the script at CLI
     ]
+    
+    if no_cache:
+        docker_build_command.append('--no-cache')
     
     subprocess.run(docker_build_command)
 
@@ -37,20 +40,16 @@ def docker_run(env_var, port_mapping):
     subprocess.run(docker_run_command)
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print("Usage: python dscript.py [build|run]")
-        sys.exit(1)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("action", choices=["build", "run"], help="Either 'build' or 'run'")
+    parser.add_argument("--no-cache", action="store_true", help="Use --no-cache with Docker build")
+    args = parser.parse_args()
     
-    action = sys.argv[1].lower()
-    
-    if action == 'build':
-        docker_build()
-    elif action == 'run':
-        # Retrieve the environment variable and port number
-        env_var = os.environ["BUILD_CONTEXT"]
-        if env_var == None:
+    if args.action == 'build':
+        docker_build(no_cache=args.no_cache)
+    elif args.action == 'run':
+        env_var = os.environ.get("BUILD_CONTEXT")
+        if env_var is None:
             sys.exit("There was no environment variable.")
         port_mapping = '8080'
         docker_run(env_var, port_mapping)
-    else:
-        print("Invalid command. Use either 'build' or 'run'.")
