@@ -84,3 +84,4 @@ JS code I based my Go adaptation on: https://dev.to/foqc/mandelbrot-set-in-js-48
 
 https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke
 
+More wasm stuff: https://paoloseverini.wordpress.com/
