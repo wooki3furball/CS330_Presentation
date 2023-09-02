@@ -80,9 +80,7 @@ Then you must click the wasm folder.
 
 # Sources
 
-JS code I based my Go adaptation on: https://dev.to/foqc/mandelbrot-set-in-js-480o
-
-https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke
-
-Wasm code explorer: https://wasdk.github.io/wasmcodeexplorer/
+JS code I based my Go adaptation on: https://dev.to/foqc/mandelbrot-set-in-js-480o <br>
+https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke <br>
+Wasm code explorer: https://wasdk.github.io/wasmcodeexplorer/ <br>
 More wasm stuff: https://paoloseverini.wordpress.com/
