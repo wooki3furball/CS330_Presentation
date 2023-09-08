@@ -7,6 +7,9 @@ Presentation Link:
 --- 
 https://docs.google.com/presentation/d/1GOgSLNMm2SAIfpOeIdAmaBRCgapucFF09w2sps8X9SA/edit?usp=sharing
 
+Why use containers?
+https://www.youtube.com/watch?v=J0NuOlA2xDc&t=123s
+
 # Downloading Docker
 
 If you are using any version of Windows, specific WSL dependencies must be installed to run Docker software.
@@ -81,6 +84,9 @@ Then you must click the wasm folder.
 # Sources
 
 JS code I based my Go adaptation on: https://dev.to/foqc/mandelbrot-set-in-js-480o <br>
+
 https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke <br>
+
 Wasm code explorer: https://wasdk.github.io/wasmcodeexplorer/ <br>
+
 More wasm stuff: https://paoloseverini.wordpress.com/
